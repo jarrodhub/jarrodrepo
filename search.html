@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app="search">
+<head>
+  <meta charset="utf-8">
+  <title>Elastic Test</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="js/elasticsearch.angular.js"></script>
+    <script src="js/search.js"></script>
+
+</head>
+<body>
+
+<div ng-controller="searchController">
+    Search: <input ng-model="searchText">
+    <button ng-click="search()">search text</button>
+    <p ng-repeat="name in results">  {{name._source}}
+
+    </p>
+    <p># results: {{total}}</p>
+</div>
+
+
+</body>
+
+</html>
